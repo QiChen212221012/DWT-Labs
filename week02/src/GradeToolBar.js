@@ -1,4 +1,5 @@
 import React from "react";
+
 function Button({ onClick, children, style, onMouseOver, onMouseOut }) {
   return (
     <button
@@ -14,11 +15,13 @@ function Button({ onClick, children, style, onMouseOver, onMouseOut }) {
 
 function PassedButton() {
   function handleMouseOver(event) {
+    console.log("Ready to confirm pass");
     event.target.style.backgroundColor = "lightgreen";
     event.target.style.color = "darkgreen";
   }
 
   function handleMouseOut(event) {
+    console.log("Mouse left the pass button");
     event.target.style.backgroundColor = "white";
     event.target.style.color = "green";
   }
@@ -29,6 +32,7 @@ function PassedButton() {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       style={{
+        backgroundColor: "white",
         color: "green",
         padding: "10px",
         border: "1px solid green",
@@ -42,11 +46,13 @@ function PassedButton() {
 
 function FailedButton() {
   function handleMouseOver(event) {
+    console.log("Ready to confirm fail");
     event.target.style.backgroundColor = "lightcoral";
     event.target.style.color = "darkred";
   }
 
   function handleMouseOut(event) {
+    console.log("Mouse left the fail button");
     event.target.style.backgroundColor = "white";
     event.target.style.color = "red";
   }
@@ -57,6 +63,7 @@ function FailedButton() {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       style={{
+        backgroundColor: "white",
         color: "red",
         padding: "10px",
         border: "1px solid red",

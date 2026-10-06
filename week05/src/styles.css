@@ -1,0 +1,174 @@
+/* ===== Simple TodoMatic CSS (matches MDN class names you used) ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font: 62.5% / 1.15 Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  color: #111;
+  background: #fff;
+}
+
+/* Layout helpers (minimal) */
+.stack-small > * + * {
+  margin-top: 1rem;
+}
+.stack-exception {
+  margin-top: 1.2rem;
+}
+.stack-large > * + * {
+  margin-top: 1.6rem;
+}
+
+/* App container */
+.todoapp {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 0 16px 24px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin: 0 0 2rem;
+}
+
+.label-wrapper {
+  text-align: center;
+  margin: 0;
+}
+
+.label__lg {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  border: 2px solid #111;
+  padding: 12px;
+  font-size: 1.6rem;
+}
+
+.input__lg {
+  height: 54px;
+}
+
+/* Buttons */
+.btn {
+  border: 2px solid #111;
+  background: #fff;
+  color: #111;
+  padding: 10px 12px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #f2f2f2;
+}
+
+.btn__primary {
+  background: #111;
+  color: #fff;
+}
+
+.btn__primary:hover {
+  background: #000;
+}
+
+.btn__lg {
+  width: 100%;
+  padding: 12px;
+}
+
+/* Filters */
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.filters {
+  justify-content: center;
+}
+
+.toggle-btn {
+  min-width: 120px;
+}
+
+.toggle-btn[aria-pressed="true"] {
+  text-decoration: underline;
+}
+
+/* Counter */
+#list-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 1.6rem 0 1.2rem;
+}
+
+/* List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 10px;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.todo:first-child {
+  border-top: none;
+}
+
+.c-cb input[type="checkbox"] {
+  width: 28px;
+  height: 28px;
+}
+
+.todo-label {
+  font-size: 1.8rem;
+}
+
+/* Completed style */
+.c-cb input[type="checkbox"]:checked + .todo-label {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Danger button */
+.btn__danger {
+  background: #d43a3a;
+  border-color: #d43a3a;
+  color: #fff;
+}
+
+.btn__danger:hover {
+  background: #b53030;
+}
+
+/* Visually hidden helper */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
